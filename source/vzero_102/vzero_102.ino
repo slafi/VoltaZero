@@ -6,26 +6,6 @@
  *  Author: S. Lafi
  *  License: MIT -- No Warranties
  *
- * IMPORTANT: The device id is unique and is the sole identifier of the device in the database 
- * Please, change the device_id for each device as following:
- * 
- *   DEVICE_ID       | NAME          |  MAC ADDRESS              |
- * --------------------------------------------------------------|  
- *   101             | VoltaAtom_4   |  6081f9fffe0020e0         |
- *   102             | VoltaAtom_3   |  6081f9fffe0021ba         |
- *   103             | VoltaAtom_2   |  6081f9fffe0008ee         |
- *   104             | VoltaAtom_1   |  6081f9fffe00245f         |
- * 
- * All additional devices should respect this format. 
- * Notice: In this version, device IDs are hardcoded. So they should be compiled in the device code
- * and enetred in the database carefully (and they should match). 
- * Sensor Types are: A, B, C, D, etc.
- * Sensor Type A definition: 
- * 
- * 1- Internal Sensors:   
- * Analog Ch 0: On board temperature sensor  
- * Analog Ch 1: Off board thermo-couple interface (k-type or J-type)
- * Analog Ch 2: Light Sensor 60kOhm@10Lux  
  */
 
 #include "Arduino.h"
