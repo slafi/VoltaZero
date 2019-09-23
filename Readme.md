@@ -75,7 +75,7 @@ The deployment of this code is similar to the deployment of most Arduino codes. 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
