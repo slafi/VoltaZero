@@ -17,11 +17,12 @@
 #define CHANNEL_NAME "Helium MQTT"                    // Use Helium MQTT channel
 
 // Debugging flags
-#define DEBUG       1       // If DEBUG is enabled, debug information is printed to the serial interface
-#define SPEECHLESS  1       // If SPEECHLESS, the buzzer is intentionnally muted (the sent buzzer status flag is not)
+#define DEBUG       1                  // If DEBUG is enabled, debug information is printed to the serial interface
+#define SPEECHLESS  0                  // If SPEECHLESS, the buzzer is intentionnally muted (the sent buzzer status flag is not)
+#define MAX_SUBMISSION_ATTEMPTS 5      // Maximum number of data submission failures before autoreset
 
 /* The time period in milliseconds required for each data reading and sending / reset delay */
-#define DEVICE_DELAY    15000          // Telemetry interval: 10 seconds
+#define DEVICE_DELAY    15000          // Telemetry interval: 15 seconds
 #define RESET_DELAY     60000          // reset delay: 60 seconds
 
 /* Sensor Thresholds :: Alter these values as required */
