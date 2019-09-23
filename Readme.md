@@ -1,8 +1,24 @@
 # VoltaZero Shield
 
-VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and external sensors. It was designed as part of the VoltaZero Sensing Unit which combines a microcontroller (Arduino Uno), a connectivity means (Helium Atom) and a sensing board (VoltaZero Shield). The primary usage of the shield is for environment control. However, it was designed with extensibility in mind. It supports external sensors through onboard built-in relays. 
+VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and external sensors. It was designed as part of the VoltaZero Sensing Unit (VSU) which combines a microcontroller (Arduino Uno), a connectivity means (Helium Atom) and a sensing board (VoltaZero Shield). The primary usage of the shield is for environment control. However, it was designed with extensibility in mind. So, it supports external sensors through onboard built-in relays.
 
-# VoltaZero Sensors
+# VoltaZero Shield Unit
+
+## VSU Capabilities
+
+The VSU offers several features:
+* Three built-in sensors
+* Up to seven external sensors (supported through extension GPIOs), which accommodates a broad range of applications
+* ISM-band radio air interface
+* Embedded sound / visual alerts
+* Flexible power supply
+* Remotely configurable
+* Automatic recovery on network error
+
+![alt text](resources/voltazero_shield.png "VoltaZero Shield Sensors")
+*VoltaZero Sensing Unit: A collection of sensors with MCU and connectivity*
+
+## Sensors Pinout
 
 | Sensor        | Pin           | Type  | Location  |
 |:------------- |:------------- |:----- |:----- |
@@ -13,92 +29,48 @@ VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and
 | Extension relay (r2) | A4 | IN/OUT | external |
 | Active buzzer | D2 | OUT | onboard |
 
-![alt text](resources/voltazero_shield.png "VoltaZero Shield Sensors")
-*VoltaZero Sensing Unit: A collection of sensors with MCU and connectivity*
-
 # Data Flow
 
-One Paragraph of project description goes here
+The VSU is part of an end-to-end cloud-based Internet-of-Things solution. So, the main burden is to ensure the communication of the sensors data to the cloud. To do so, the MCU reads the sensors data from the VoltaZero shield. It then sends that data to the Helium Element through the Helium Atom shield. The Element transfers the data to the Helium servers which dispatch it to a preselected channel. There are three types of channels:
+* Cloud provider: Google IoT Core, Azure Iot Hub, AWS IoT Core
+* MQTT broker
+* HTTP endpoint
 
 ![alt text](resources/vzero_data_flow.png "VoltaZero Data Stream")
+*The VSU uses Helium Atom and Element to send data to the cloud*
 
 # Project Description
 
-One Paragraph of project description goes here
+This project consists of implementing the MCU code which:
+* Gets the readings of the onboard sensors
+* Sends the data in JSON format to the MQTT broker
+* Checks if the readings are nominal
+* Trigger sound / visual alerts if the readings are not nominal or the VSU fails to connect to the Helium Element
 
-## Getting Started
+## Prerequisites
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Both the Helium Atom and Element should be activated and setup using the user's dashboard in the Helium website. The appropriate channel should also be configured.
 
-### Prerequisites
+## Dependencies
 
-What things you need to install the software and how to install them
+This project depends on:
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+* [Arduino 1.8.9](https://www.arduino.cc/en/main/software) - The standard Arduino library
+* [Helium Arduino](https://github.com/helium/helium-arduino) - The Helium library for Arduino
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+The deployment of this code is similar to the deployment of most Arduino codes. However, one should pay attention to the definitions in `config.h` file in order to set up correctly the VSU environment. 
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Arduino 1.8.9](https://www.arduino.cc/en/main/software) - The Arduino IDE
+* [Helium Arduino](https://github.com/helium/helium-arduino) - The Helium library for Arduino
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **S. Lafi** - *Initial work*
+* **A. Elzayat** - *Tested and validated sensor readings*
 
 ## License
 
@@ -106,4 +78,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## Acknowledgments
 
-* **A. Elzayat** - Design of the VoltaZero Shield.
+* **A. Elzayat** - Design of the VoltaZero Shield and validation of sensors' readings.
