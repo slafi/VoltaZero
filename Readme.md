@@ -1,6 +1,8 @@
 # VoltaZero Shield
 
-VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and external sensors: 
+VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and external sensors. It was designed as part of the VoltaZero Sensing Unit which combines a microcontroller (Arduino Uno), a connectivity means (Helium Atom) and a sensing board (VoltaZero Shield). The primary usage of the shield is for environment control. However, it was designed with extensibility in mind. It supports external sensors through onboard built-in relays. 
+
+# VoltaZero Sensors
 
 | Sensor        | Pin           | Type  | Location  |
 |:------------- |:------------- |:----- |:----- |
@@ -11,7 +13,8 @@ VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and
 | Extension relay (r2) | A4 | IN/OUT | external |
 | Active buzzer | D2 | OUT | onboard |
 
-![alt text](resources/voltazero_shield.png "VoltaZero Shield")
+![alt text](resources/voltazero_shield.png "VoltaZero Shield Sensors")
+*VoltaZero Sensing Unit: A collection of sensors with MCU and connectivity*
 
 # Data Flow
 
