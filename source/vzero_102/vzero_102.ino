@@ -172,7 +172,7 @@ void loop() {
 #endif
     }
     
-    if(lsSensitivity >= DARKNESS_THRESHOLD)  // Check if ambiant light level is high
+    if(lsSensitivity <= DARKNESS_THRESHOLD)  // Check if ambiant light level is high
     {
         buzzerStatus = 1;
         lsStatus = 1;

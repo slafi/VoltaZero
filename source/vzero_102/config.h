@@ -23,11 +23,11 @@
 
 /* The time period in milliseconds required for each data reading and sending / reset delay */
 #define DEVICE_DELAY    15000          // Telemetry interval: 15 seconds
-#define RESET_DELAY     60000          // reset delay: 60 seconds
+#define RESET_DELAY     60000          // Reset delay: 60 seconds
 
 /* Sensor Thresholds :: Alter these values as required */
-#define MAX_TEMPERATURE        30.0        // High temperature threshold (Buzzer ON)
-#define MIN_TEMPERATURE        0.0         // Low temperature threshold (Buzzer ON)
-#define DARKNESS_THRESHOLD     0.0         // The darkness threshold (Buzzer ON)
+#define MAX_TEMPERATURE        30.0        // High temperature threshold (Buzzer ON above this threshold)
+#define MIN_TEMPERATURE        0.0         // Low temperature threshold (Buzzer ON below this threshold)
+#define DARKNESS_THRESHOLD     2.5         // The darkness threshold :: Light is maximum when the light sensor voltage is close to 0V (Buzzer ON below this threshold)
 
 #endif
