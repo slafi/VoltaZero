@@ -2,7 +2,7 @@
 
 VoltaZero is an Arduino Uno shield which encompasses a total of five onboard and external sensors. It was designed as part of the VoltaZero Sensing Unit (VSU) which combines a microcontroller (Arduino Uno), a connectivity means (Helium Atom/Element) and a sensing board (VoltaZero Shield). The primary usage of the shield is for environment control. However, it was designed with extensibility in mind. For this purpose, it supports external sensors through onboard built-in relays.
 
-# VoltaZero Shield Unit
+# VoltaZero Sensing Unit
 
 ## VSU Capabilities
 
@@ -46,7 +46,7 @@ This project consists of implementing the MCU code which:
 * Gets the readings from the onboard sensors
 * Sends the data in JSON format to the MQTT broker
 * Checks if the readings are in a predefined "normal" range
-* Trigger sound / visual alerts if the readings are not nominal or the VSU fails to connect to the Helium Element
+* Triggers sound / visual alerts if the readings are not nominal or the VSU fails to connect to the Helium Element
 
 ## Prerequisites
 
